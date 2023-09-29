@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Listing</title>
+</head>
+<body>
+    <h1>Report Listing</h1>
+    <ul>
+        <% reports.forEach(function(report) { %>
+            <li>Report Status: <%= report.status %></li>
+            <li>Created By: <%= report.createdBy %></li>
+            <li>Created Date: <%= report.date.toDateString() %></li>
+            <br>
+        <% }); %>
+    </ul>
+</body>
+</html>
