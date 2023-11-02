@@ -39,6 +39,14 @@ app.use(flash());
 app.use(customWare.setFlash)
 
 // Use the routers
+app.use((req, res, next) => {
+  if (req.url == '/') {
+   res.redirect('/doctors/register');
+   return;
+  }
+   next();
+ })
+ 
 app.use('/doctors', doctorsRouter);
 app.use('/patients', patientsRouter);
 app.use('/reports', reportsRouter);
